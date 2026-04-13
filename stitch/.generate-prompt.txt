@@ -1,0 +1,91 @@
+# Sayaç Uygulaması - Ürün Gereksinimleri Dokümanı (PRD)
+
+## Proje Özeti ve Hedefler
+
+**Sayaç Test Fix** projesi, kullanıcıların basit bir sayaç üzerinde artırma, azaltma ve sıfırlama işlemleri yapabileceği minimal, tek sayfalık bir web uygulamasıdır. Projenin temel hedefleri:
+
+- Kullanıcı dostu ve anlaşılır bir arayüz sunmak
+- Anlık geri bildirim ile sayaç işlemlerini görselleştirmek
+- Hafif ve hızlı bir SPA (Single Page Application) deneyimi sağlamak
+- Tailwind CSS ile tutarlı ve modern bir görünüm elde etmek
+
+## Hedef Platform
+
+- **Platform:** Web (tarayıcı tabanlı)
+- **Cihaz Desteği:** Masaüstü, tablet ve mobil cihazlar (responsive tasarım)
+- **Tarayıcı Uyumluluğu:** Modern tarayıcılar (Chrome, Firefox, Safari, Edge)
+
+## Fonksiyonel Gereksinimler
+
+### 1. Sayaç İşlemleri
+- **Artır:** Sayaç değerini 1 artır
+- **Azalt:** Sayaç değerini 1 azalt
+- **Sıfırla:** Sayaç değerini 0'a döndür
+
+### 2. Kullanıcı Deneyimi
+- Her buton tıklamasında sayaç değeri anında güncellenmeli
+- Sayaç değeri negatif olabilir (sınırlandırma yok)
+- Butonlar büyük ve dokunmaya uygun olmalı
+- Sayaç değeri büyük ve okunaklı bir fontla gösterilmeli
+
+### 3. Hata Durumları
+- Uygulama çalışmazsa kullanıcıya basit bir hata mesajı gösterilmeli
+- JavaScript devre dışı kalsa bile temel bir fallback mesajı sunulmalı
+
+## Teknik Gereksinimler
+
+### Stack
+- **Framework:** React 18
+- **Build Aracı:** Vite
+- **Stil:** Tailwind CSS
+- **Dil:** JavaScript (ES6+) veya TypeScript
+- **State Yönetimi:** React useState (yerel state)
+
+### API ve Backend
+- API entegrasyonu gerekli değil
+- Veri kalıcılığı gerekli değil (sayfa yenilenince sıfırlanabilir)
+
+### Auth
+- Kimlik doğrulama gerekli değil
+
+## UI/UX Gereksinimler
+
+### Renk Paleti ve Tipografi
+- **Arka Plan:** Açık gri veya beyaz (#f3f4f6 veya #ffffff)
+- **Birincil Renk:** Mavi tonları (Tailwind blue-600)
+- **Artır Butonu:** Yeşil (green-500)
+- **Azalt Butonu:** Kırmızı (red-500)
+- **Sıfırla Butonu:** Gri (gray-500)
+- **Tipografi:** Sans-serif, sayaç değeri için 4xl-6xl boyut
+
+### Sayfa Yapısı
+- Ortalanmış bir kart içerisinde sayaç ve butonlar
+- Üst kısımda uygulama başlığı: "Sayaç"
+- Ortada büyük sayaç değeri
+- Alt sıradaki butonlar: Artır, Azalt, Sıfırla
+
+## Performans ve Güvenlik Gereksinimleri (Non-functional)
+
+- **Performans:** İlk yükleme süresi < 1 saniye
+- **Erişilebilirlik:** Butonlara aria-label eklenmeli
+- **Güvenlik:** XSS riski yoktur (harici input yok)
+- **SEO:** Gerekli değil (SPA, tek sayfa)
+
+## Ekranlar (Screens)
+
+| # | Ekran Adı | Tür | Açıklama |
+|---|-----------|-----|----------|
+| 1 | Ana Sayfa | main | Sayaç değeri, Artır, Azalt, Sıfırla butonları |
+| 2 | 404 Hata Sayfası | error | Geçersiz route için basit hata mesajı |
+| 3 | Boş Durum / Hata Durumu | empty | Uygulama yüklenemezse gösterilecek fallback mesajı |
+
+Generate a SEPARATE screen design for EVERY page, view, modal, dialog, tab panel, and settings screen described in this PRD. Do NOT skip ANY screen — even if it seems minor.
+
+MANDATORY SCREENS:
+- If the PRD mentions "settings" or "ayarlar" → generate a Settings screen
+- If the PRD mentions tabs or bottom navigation → generate EACH tab view as a separate screen
+- If the PRD mentions modals (statistics, help, share, confirmation) → generate each as a separate screen
+- If the PRD mentions error states, empty states, loading states → generate those too
+- Generate at least as many screens as there are distinct views/pages/modals in the PRD
+
+All visible text must be in Turkish. Use a dark, modern theme.

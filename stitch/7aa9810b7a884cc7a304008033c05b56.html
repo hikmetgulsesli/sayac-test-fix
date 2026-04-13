@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#930013",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-surface-variant": "#c3c6d7",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-tint": "#b4c5ff",
+                    "on-tertiary-fixed": "#410004",
+                    "inverse-on-surface": "#283044",
+                    "secondary-container": "#00b954",
+                    "tertiary-container": "#cf2c30",
+                    "on-secondary": "#003915",
+                    "tertiary": "#ffb3ad",
+                    "surface-container": "#171f33",
+                    "on-primary-container": "#eeefff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-low": "#131b2e",
+                    "on-primary": "#002a78",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-container": "#ffecea",
+                    "on-background": "#dae2fd",
+                    "on-tertiary": "#68000a",
+                    "on-error": "#690005",
+                    "secondary": "#4ae176",
+                    "background": "#0b1326",
+                    "surface-dim": "#0b1326",
+                    "surface-bright": "#31394d",
+                    "outline": "#8d90a0",
+                    "on-surface": "#dae2fd",
+                    "secondary-fixed-dim": "#4ae176",
+                    "primary": "#b4c5ff",
+                    "surface-container-lowest": "#060e20",
+                    "inverse-primary": "#0053db",
+                    "surface-container-highest": "#2d3449",
+                    "secondary-fixed": "#6bff8f",
+                    "on-secondary-fixed-variant": "#005321",
+                    "surface": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "surface-variant": "#2d3449",
+                    "inverse-surface": "#dae2fd",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002109",
+                    "on-secondary-container": "#004119",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#434655",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "primary-container": "#2563eb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #b4c5ff 0%, #2563eb 100%);
+        }
+        .glass-obsidian {
+            background: rgba(23, 31, 51, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col items-center justify-center selection:bg-primary-container selection:text-on-primary-container">
+<!-- Note: TopAppBar and BottomNavBar are suppressed as per the "Destination Rule" for 404 Error Pages -->
+<main class="relative z-10 w-full max-w-4xl px-6 flex flex-col items-center">
+<!-- Kinetic Monolith Container -->
+<div class="w-full bg-surface-container-low rounded-[2rem] p-12 md:p-24 flex flex-col items-center text-center shadow-[0_32px_64px_-12px_rgba(6,14,32,0.8)] relative overflow-hidden">
+<!-- Background Decorative Glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Error Illustration (Abstract Minimalist Icon) -->
+<div class="relative mb-12 flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-50"></div>
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/15 relative">
+<span class="material-symbols-outlined text-[5rem] md:text-[8rem] text-primary-fixed-dim" style="font-variation-settings: 'wght' 100;">
+                        explore_off
+                    </span>
+</div>
+<!-- Float 404 Text -->
+<div class="absolute -top-4 -right-8 md:-right-12">
+<span class="text-7xl md:text-9xl font-extrabold tracking-tighter text-outline-variant/20 italic select-none">404</span>
+</div>
+</div>
+<!-- Typography Content -->
+<div class="space-y-6 max-w-xl">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold tracking-tighter text-primary-fixed">
+                    Sayfa Bulunamadı
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed opacity-80">
+                    Aradığınız sayfa mevcut değil veya taşınmış olabilir. Görünüşe göre rotadan biraz saptınız.
+                </p>
+</div>
+<!-- Action Area -->
+<div class="mt-16 flex flex-col sm:flex-row gap-4 w-full justify-center">
+<a class="kinetic-gradient text-on-primary-container px-8 py-4 rounded-xl font-bold tracking-tight flex items-center justify-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-[0_12px_40px_rgba(37,99,235,0.2)]" href="/">
+<span class="material-symbols-outlined">home</span>
+                    Ana Sayfaya Dön
+                </a>
+<button class="bg-surface-container-highest/40 border border-outline-variant/20 text-on-surface px-8 py-4 rounded-xl font-bold tracking-tight flex items-center justify-center gap-3 transition-all hover:bg-surface-container-highest/60 hover:border-outline-variant/40 active:scale-95">
+<span class="material-symbols-outlined">arrow_back</span>
+                    Geri Git
+                </button>
+</div>
+<!-- Minimalist Detail -->
+<div class="mt-16 flex items-center gap-4 py-2 px-4 rounded-full bg-surface-container-lowest/50 border border-outline-variant/10">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#4ae176]"></div>
+<span class="text-[10px] font-label uppercase tracking-[0.2em] text-outline">Sistem Durumu: Normal</span>
+</div>
+</div>
+<!-- Footer / Support info -->
+<div class="mt-12 text-center opacity-40">
+<p class="text-sm font-medium text-on-surface-variant">Yardıma mı ihtiyacınız var? <span class="text-primary cursor-pointer hover:underline">Destek ile iletişime geçin</span></p>
+</div>
+</main>
+<!-- Visual Anchor Background Elements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[150px]"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[30%] h-[30%] bg-secondary-container/5 rounded-full blur-[120px]"></div>
+</div>
+</body></html>
