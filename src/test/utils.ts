@@ -1,13 +1,15 @@
 import '@testing-library/jest-dom'
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
-import App from '../App'
-import { Counter } from '../components/Counter'
-import { ErrorBoundary } from '../components/ErrorBoundary'
-import { ErrorFallback } from '../components/ErrorFallback'
-import { NotFound } from '../pages/NotFound'
-import { useCounter } from '../hooks/useCounter'
+import { BrowserRouter, MemoryRouter, Routes, Route } from 'react-router-dom'
+import App from './App'
+import { Counter } from './components/Counter'
+import { ErrorBoundary } from './components/ErrorBoundary'
+import { ErrorFallback } from './components/ErrorFallback'
+import { NotFound } from './pages/NotFound'
+import { HistoryPage } from './pages/HistoryPage'
+import { SettingsPage } from './pages/SettingsPage'
+import { useCounter } from './hooks/useCounter'
 
 // ============================================
 // useCounter Hook Tests
@@ -274,5 +276,82 @@ describe('App - Integration', () => {
     expect(screen.getByText('2')).toBeInTheDocument()
     fireEvent.click(screen.getByText('Sayacı Sıfırla'))
     expect(screen.getByText('0')).toBeInTheDocument()
+  })
+
+  it('alt navigasyon bağlantıları görünmeli', () => {
+    render(<App />)
+    expect(screen.getAllByText('Ana Sayfa').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('Geçmiş').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('Ayarlar').length).toBeGreaterThan(0)
+  })
+})
+
+// ============================================
+// US-004: Navigation and Routing Tests
+// ============================================
+describe('US-004: Navigation and Routing', () => {
+  it('/history rotası Geçmiş sayfasını göstermeli', () => {
+    render(
+      <MemoryRouter initialEntries={['/history']}>
+        <Routes>
+          <Route path="/" element={<div>Ana Sayfa</div>} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Routes>
+      </MemoryRouter>
+    )
+    expect(screen.getAllByText('Geçmiş').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getByText('Henüz geçmiş kaydı bulunmuyor.')).toBeInTheDocument()
+  })
+
+  it('/settings rotası Ayarlar sayfasını göstermeli', () => {
+    render(
+      <MemoryRouter initialEntries={['/settings']}>
+        <Routes>
+          <Route path="/" element={<div>Ana Sayfa</div>} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Routes>
+      </MemoryRouter>
+    )
+    expect(screen.getAllByText('Ayarlar').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getByText('Ayarlar sayfası yakında kullanıma sunulacak.')).toBeInTheDocument()
+  })
+
+  it('geçersiz rota 404 sayfasını göstermeli', () => {
+    render(
+      <MemoryRouter initialEntries={['/gecersiz-rota']}>
+        <Routes>
+          <Route path="/" element={<div>Ana Sayfa</div>} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </MemoryRouter>
+    )
+    expect(screen.getByText('Sayfa Bulunamadı')).toBeInTheDocument()
+    expect(screen.getByText('404')).toBeInTheDocument()
+  })
+
+  it('HistoryPage Ana Sayfaya Dön butonu çalışmalı', () => {
+    render(
+      <MemoryRouter initialEntries={['/history']}>
+        <Routes>
+          <Route path="/" element={<div data-testid="home">Ana Sayfa İçeriği</div>} />
+          <Route path="/history" element={<HistoryPage />} />
+        </Routes>
+      </MemoryRouter>
+    )
+    expect(screen.getByText('Ana Sayfaya Dön')).toBeInTheDocument()
+  })
+
+  it('SettingsPage Ana Sayfaya Dön butonu çalışmalı', () => {
+    render(
+      <MemoryRouter initialEntries={['/settings']}>
+        <Routes>
+          <Route path="/" element={<div data-testid="home">Ana Sayfa İçeriği</div>} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Routes>
+      </MemoryRouter>
+    )
+    expect(screen.getByText('Ana Sayfaya Dön')).toBeInTheDocument()
   })
 })
