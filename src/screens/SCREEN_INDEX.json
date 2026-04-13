@@ -1,0 +1,38 @@
+[
+  {
+    "screenId": "e0a7614789dc4e88aadf378174f2cf8f",
+    "title": "Sayaç Uygulaması PRD",
+    "componentName": "SayacUygulamasiPrd",
+    "file": "src/screens/SayacUygulamasiPrd.tsx",
+    "buttons": 0,
+    "inputs": 0,
+    "links": 0
+  },
+  {
+    "screenId": "da2ad590408d4a6e9529c496fd4f7525",
+    "title": "Boş / Hata Durumu",
+    "componentName": "BosHataDurumu",
+    "file": "src/screens/BosHataDurumu.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 3
+  },
+  {
+    "screenId": "ebbff11b24c948899b0f76a4bff7d9cc",
+    "title": "Ana Sayfa - Sayaç",
+    "componentName": "AnaSayfaSayac",
+    "file": "src/screens/AnaSayfaSayac.tsx",
+    "buttons": 5,
+    "inputs": 0,
+    "links": 3
+  },
+  {
+    "screenId": "7aa9810b7a884cc7a304008033c05b56",
+    "title": "404 Sayfa Bulunamadı",
+    "componentName": "404SayfaBulunamadi",
+    "file": "src/screens/404SayfaBulunamadi.tsx",
+    "buttons": 1,
+    "inputs": 0,
+    "links": 1
+  }
+]
