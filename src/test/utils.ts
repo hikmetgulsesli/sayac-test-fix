@@ -14,7 +14,7 @@ import { useCounter } from './hooks/useCounter'
 // ============================================
 // useCounter Hook Tests
 // ============================================
-function TestCounterComponent() {
+function TestCounterComponent(): React.ReactElement {
   const { count, increment, decrement, reset } = useCounter(0)
   return (
     <div>
