@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-export function NotFound(): JSX.Element {
+export function NotFound(): React.ReactElement {
   const navigate = useNavigate()
 
   const handleGoBack = () => {

@@ -5,7 +5,7 @@ interface ErrorFallbackProps {
   errorMessage?: string
 }
 
-export function ErrorFallback(props: ErrorFallbackProps): JSX.Element {
+export function ErrorFallback(props: ErrorFallbackProps): React.ReactElement {
   const { onRetry, errorMessage } = props
   const navigate = useNavigate()
 
