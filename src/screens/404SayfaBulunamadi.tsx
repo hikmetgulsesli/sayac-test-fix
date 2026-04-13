@@ -9,9 +9,9 @@
 
 import { useState } from "react";
 
-interface 404SayfaBulunamadiProps {}
+interface SayfaBulunamadiProps {}
 
-export function 404SayfaBulunamadi(props: 404SayfaBulunamadiProps) {
+export function SayfaBulunamadi404(props: SayfaBulunamadiProps) {
   return (
     <>
       {/*  Note: TopAppBar and BottomNavBar are suppressed as per the "Destination Rule" for 404 Error Pages  */}
